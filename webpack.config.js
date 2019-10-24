@@ -5,6 +5,12 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const webpack = require('webpack');
 const jquery = require('jquery');
 
+<<<<<<< HEAD
+=======
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');//css压缩
+const uglify = require('uglifyjs-webpack-plugin');//js压缩
+
+>>>>>>> ‘10.24
 
 const glob = require('glob') 
 
@@ -36,7 +42,15 @@ module.exports = {
     plugins: [
         //new webpack.HotModuleReplacementPlugin(),
         //new CleanWebpackPlugin(['./dist']),
+<<<<<<< HEAD
         
+=======
+
+        new OptimizeCSSAssetsPlugin({}),//css压缩
+        new uglify({}),//js压缩
+
+
+>>>>>>> ‘10.24
         new MiniCssExtractPlugin({//设置生成的css路径
             filename: 'css/[name].css',
             chunkFilename: "css/[id].css"
@@ -92,7 +106,11 @@ module.exports = {
                 loader: 'html-withimg-loader'
             },
             {
+<<<<<<< HEAD
                 test:/\.(gif|png|jpg|woff|svg|ttf|eot)$/,//图片的处理
+=======
+                test:/\.(gif|png|jpg)$/,//图片的处理
+>>>>>>> ‘10.24
                 use:[{
                     loader:'url-loader',
                     options: {
@@ -116,6 +134,7 @@ module.exports = {
             
         ]
     },
+<<<<<<< HEAD
     optimization: {//js代码分离
         splitChunks: {
             chunks: 'all',
@@ -125,6 +144,19 @@ module.exports = {
     },
     devServer: {//服务器带热更新
         host: '127.0.0.1',
+=======
+    optimization: {//js与css代码分离
+        splitChunks: {
+            chunks: 'all',
+            name: 'commons',
+            filename: 'js/[name].[hash].js',
+            minSize: 1, // 最小尺寸，30000
+            minChunks:2, // 最小 chunk ，默认1
+        }
+    },
+    devServer: {//服务器带热更新
+        host: '192.168.1.94',
+>>>>>>> ‘10.24
         publicPath: '/',
         contentBase: './',
         hot: false

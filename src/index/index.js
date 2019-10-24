@@ -1,9 +1,22 @@
 
+<<<<<<< HEAD
 import '../assets/css/webset.scss';
 
 import layer from 'layui-layer';
 
 import '../assets/js/custom.js'
+=======
+
+
+import './index.scss';
+import  '../assets/css/webset.scss';
+
+import layer from 'layui-layer';
+
+import '../assets/js/custom.js';
+
+layer.msg("asd");
+>>>>>>> ‘10.24
 
 // import Vue from 'vue';
 // import Swipercss from '../js/plugin/swiper/swiper.min.css'
@@ -19,9 +32,12 @@ import '../assets/js/custom.js'
 //     })
 // }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> ‘10.24
 // var ap = function(x, y) { 
 //     x++;
 //     y--;
